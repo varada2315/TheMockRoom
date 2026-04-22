@@ -94,27 +94,14 @@ export function Home({ onBookSession }: HomeProps) {
               variants={staggerContainer}
               className="max-w-5xl mx-auto flex flex-col items-center"
             >
-              <motion.div variants={fadeIn} className="mb-8 inline-flex items-center gap-3 px-5 py-2 rounded-full border border-primary/40 bg-primary/10 text-primary text-sm font-bold tracking-widest uppercase">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
-                </span>
-                The Gold Standard of Corporate Readiness
-              </motion.div>
-              
               <motion.h1 variants={fadeIn} className="font-serif text-4xl md:text-8xl lg:text-9xl leading-[1] md:leading-[0.9] text-foreground mb-6 md:mb-8">
                 Master the <br className="hidden md:block" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/80 to-secondary">Silent Rules.</span>
               </motion.h1>
               
-              <motion.h2 variants={fadeIn} className="font-display tracking-[0.2em] text-xl md:text-3xl text-muted-foreground/80 mb-10 uppercase font-light">
-                Why 90% of Graduates Fail the Final Boardroom.
+              <motion.h2 variants={fadeIn} className="font-display tracking-[0.2em] text-lg md:text-2xl text-primary/80 mb-6 uppercase font-bold text-center">
+                The Boardroom Simulation for India's Next-Gen Leaders.
               </motion.h2>
-              
-              <motion.p variants={fadeIn} className="text-lg md:text-2xl text-muted-foreground max-w-3xl mb-14 font-light leading-relaxed">
-                We simulate the boardroom pressure before you ever step into it. 
-                Our AI-driven feedback bridge the gap between your degree and your dream offer.
-              </motion.p>
               
               <motion.div variants={fadeIn} className="flex flex-col sm:flex-row items-center gap-8 w-full sm:w-auto">
                 <Button 
@@ -152,11 +139,12 @@ export function Home({ onBookSession }: HomeProps) {
         {/* TRUST BAR */}
         <section className="py-10 border-y border-border/30 bg-card/10 backdrop-blur-xl relative z-20">
           <div className="container mx-auto px-4 md:px-6">
-            <p className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground/60 mb-8 font-bold">Trusted by graduates from top institutions</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-20 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
-              {['NIT Silchar', 'Tezpur University', 'IIT Guwahati', 'Don Bosco', 'Assam University'].map((name) => (
-                <span key={name} className="font-serif text-xl md:text-2xl text-foreground font-semibold italic">{name}</span>
-              ))}
+            <p className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground/60 mb-8 font-bold">Candidates from India's elite institutions</p>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
+              <span className="font-serif text-xl md:text-2xl font-bold tracking-tighter">Elite Institutions</span>
+              <span className="font-serif text-xl md:text-2xl font-bold tracking-tighter">Pan-India Reach</span>
+              <span className="font-serif text-xl md:text-2xl font-bold tracking-tighter">Tier 1 Corporates</span>
+              <span className="font-serif text-xl md:text-2xl font-bold tracking-tighter">Global Tech Giants</span>
             </div>
           </div>
         </section>
@@ -209,22 +197,23 @@ export function Home({ onBookSession }: HomeProps) {
               <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto italic">From academic theory to corporate dominance.</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
               {/* Connector line for desktop */}
               <div className="hidden md:block absolute top-1/4 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent z-0"></div>
               
               {[
-                { step: "01", title: "Diagnostic", desc: "Initial baseline simulation to identify your raw psychological and technical gaps." },
-                { step: "02", title: "Gap Report", desc: "Detailed AI analysis of your articulation, micro-expressions, and logic flow." },
-                { step: "03", title: "Recalibration", desc: "Intensive 1-on-1 coaching based on your specific diagnostic data." },
-                { step: "04", title: "Final Boardroom", desc: "Live simulation with industry veterans to certify your readiness." }
+                { step: "01", title: "Targeting", desc: "Select your dream role and company—like 'Product Engineer at Google' or 'Consultant at BCG'." },
+                { step: "02", title: "AI Diagnostic", desc: "5-level adaptive assessment (Easy to Tough) based on your specific company's bar." },
+                { step: "03", title: "Gap Report", desc: "Instant AI generation of your technical and behavioral performance metrics." },
+                { step: "04", title: "Human Mentor", desc: "Your report is sent to an industry expert who will lead your live sessions." },
+                { step: "05", title: "Evolution", desc: "Intensive training with your mentor to bridge the gaps and secure the offer." }
               ].map((item, idx) => (
                 <div key={idx} className="relative z-10 flex flex-col items-center text-center group">
-                  <div className="w-20 h-20 rounded-full bg-background border-2 border-primary flex items-center justify-center mb-8 shadow-[0_0_20px_rgba(212,168,67,0.2)] group-hover:scale-110 transition-all duration-500">
-                    <span className="font-display text-2xl text-primary">{item.step}</span>
+                  <div className="w-16 h-16 rounded-full bg-background border-2 border-primary flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(212,168,67,0.2)] group-hover:scale-110 transition-all duration-500">
+                    <span className="font-display text-xl text-primary">{item.step}</span>
                   </div>
-                  <h3 className="font-display text-xl uppercase tracking-widest text-foreground mb-4 font-bold">{item.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed font-light">{item.desc}</p>
+                  <h3 className="font-display text-sm uppercase tracking-widest text-foreground mb-4 font-bold">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed font-light text-xs">{item.desc}</p>
                 </div>
               ))}
             </div>

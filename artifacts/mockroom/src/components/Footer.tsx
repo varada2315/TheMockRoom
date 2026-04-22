@@ -12,7 +12,7 @@ export function Footer() {
               <Link href="/">
                 <a className="flex items-center gap-3">
                   <img 
-                    src={`${import.meta.env.BASE_URL}logo.webp`} 
+                    src={`${import.meta.env.BASE_URL}logo-main.png`} 
                     alt="The Mock Room Logo" 
                     className="h-12 w-auto object-contain transition-all duration-500"
                   />
@@ -53,15 +53,15 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-muted-foreground text-sm">
                 <MapPin className="w-5 h-5 text-primary shrink-0" />
-                <span>Guwahati, Assam<br />Northeast India</span>
+                <span>Agartala, Tripura, India</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground text-sm">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
-                <span>+91 98765 43210</span>
+                <span>+91 70858 09332</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground text-sm">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                <span>hello@themockroom.com</span>
+                <span>Themockroomoperates@gmail.com</span>
               </li>
             </ul>
             

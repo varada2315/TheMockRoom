@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { CheckCircle2, TrendingUp, Target, Shield, Zap } from 'lucide-react';
+import { CheckCircle2, TrendingUp, Target, Shield, Zap, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
@@ -46,18 +46,18 @@ export function Services({ onBookSession }: ServicesProps) {
               {[
                 {
                   step: "01",
-                  title: "Simulate",
-                  desc: "60-minute real boardroom-style interview sessions that mirror the intensity of top corporate panels."
+                  title: "AI Diagnostic",
+                  desc: "5-level adaptive assessment tailored to your target company (e.g., Product Engineer at Google or Analyst at TCS)."
                 },
                 {
                   step: "02",
-                  title: "Diagnose",
-                  desc: "AI-powered 'Gap Report' identifies structural weaknesses in your articulation, body language, and content."
+                  title: "Gap Analysis",
+                  desc: "Instant AI report identifying your structural behavioral and technical gaps before the human mentor steps in."
                 },
                 {
                   step: "03",
-                  title: "Place",
-                  desc: "Top performers don't just get feedback—they get direct placement opportunities with our partner companies."
+                  title: "Human Mentorship",
+                  desc: "Live intensive sessions led by industry experts who use your AI data to surgically fix your performance."
                 }
               ].map((item, idx) => (
                 <motion.div 
@@ -144,7 +144,7 @@ export function Services({ onBookSession }: ServicesProps) {
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   {[
-                    { title: "Salary Negotiation", desc: "Learn the art of the 'Final Ask' and how to articulate your value in numbers.", icon: <TrendingUp className="w-5 h-5 text-primary" /> },
+                    { title: "Strategic Negotiation", desc: "Learn how to articulate your value and handle complex professional conversations.", icon: <TrendingUp className="w-5 h-5 text-primary" /> },
                     { title: "Executive Presence", desc: "Master the non-verbal cues that separate leaders from followers in the room.", icon: <Target className="w-5 h-5 text-primary" /> },
                     { title: "Stress Inoculation", desc: "Build a high tolerance for professional pressure and difficult conversations.", icon: <Shield className="w-5 h-5 text-primary" /> },
                     { title: "Logical Structuring", desc: "Organize your thoughts in real-time using the 'Pyramid Principle' of communication.", icon: <Zap className="w-5 h-5 text-primary" /> }
@@ -157,33 +157,6 @@ export function Services({ onBookSession }: ServicesProps) {
                       <p className="text-muted-foreground text-sm leading-relaxed">{benefit.desc}</p>
                     </div>
                   ))}
-                </div>
-              </motion.div>
-              
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeIn}
-                className="relative hidden lg:block"
-              >
-                <div className="aspect-video bg-card border border-border/50 rounded-3xl p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden group">
-                   <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                   <div className="flex justify-between items-start relative z-10">
-                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                        <TrendingUp className="w-6 h-6 text-primary" />
-                     </div>
-                     <div className="text-right">
-                       <p className="text-xs text-muted-foreground uppercase tracking-widest">Projection</p>
-                       <p className="text-2xl font-display text-foreground">Career ROI</p>
-                     </div>
-                   </div>
-                   <div className="flex-grow flex items-center justify-center relative z-10">
-                     <div className="text-center">
-                       <p className="text-6xl font-serif text-primary mb-2">12x</p>
-                       <p className="text-sm text-muted-foreground uppercase tracking-widest">Lifetime Value of guidance</p>
-                     </div>
-                   </div>
                 </div>
               </motion.div>
             </div>
@@ -211,6 +184,15 @@ export function Services({ onBookSession }: ServicesProps) {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {[
                 {
+                  id: "Monthly",
+                  title: "Monthly Batch",
+                  subtitle: "Full monthly immersion",
+                  price: "999",
+                  unit: "per month",
+                  popular: true,
+                  features: ["8 Total Sessions (2/week)", "Detailed AI Gap Report", "Peer Learning", "Direct Placement Pool"]
+                },
+                {
                   id: "Basic",
                   title: "Basic Session",
                   subtitle: "Individual 1-on-1 Prep",
@@ -221,19 +203,11 @@ export function Services({ onBookSession }: ServicesProps) {
                 {
                   id: "Advanced",
                   title: "Comprehensive",
-                  subtitle: "Deep-dive role-specific prep",
+                  subtitle: "Premium 1-on-1 Guidance",
                   price: "499",
                   unit: "per session",
-                  popular: true,
-                  features: ["60-Min Mock Interview", "AI Gap Report", "Role-Specific Focus", "Resume Review"]
-                },
-                {
-                  id: "Monthly",
-                  title: "Monthly Batch",
-                  subtitle: "Group simulations + Reports",
-                  price: "999",
-                  unit: "per month",
-                  features: ["4 Group Sessions/Mo", "Detailed AI Gap Report", "Peer Learning", "Direct Placement Pool"]
+                  premium: true,
+                  features: ["60-Min Mock Interview", "AI Gap Report", "Role-Specific Focus", "Resume Review", "Direct Human Mentorship"]
                 }
               ].map((tier, idx) => (
                 <motion.div 
@@ -242,13 +216,16 @@ export function Services({ onBookSession }: ServicesProps) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.2 }}
-                  className={`relative flex flex-col p-8 bg-card border transition-all duration-300 hover:-translate-y-2 ${
-                    tier.popular ? 'border-primary shadow-[0_0_40px_rgba(212,168,67,0.15)]' : 'border-border hover:border-primary/50'
-                  }`}
+                  className={`relative bg-card p-8 border ${tier.popular ? 'border-primary shadow-[0_0_40px_rgba(212,168,67,0.1)]' : tier.premium ? 'border-secondary shadow-[0_0_40px_rgba(31,107,255,0.05)]' : 'border-border'} flex flex-col transition-all duration-300 hover:-translate-y-2`}
                 >
                   {tier.popular && (
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-4 py-1 text-xs font-bold uppercase tracking-widest">
-                      Most Selected
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-bold tracking-[0.2em] uppercase rounded-full">
+                      Most Popular
+                    </div>
+                  )}
+                  {tier.premium && (
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-secondary text-white text-xs font-bold tracking-[0.2em] uppercase rounded-full">
+                      Premium Service
                     </div>
                   )}
                   
@@ -269,6 +246,10 @@ export function Services({ onBookSession }: ServicesProps) {
                         {feat}
                       </li>
                     ))}
+                    <li className="flex items-start gap-3 text-muted-foreground text-sm">
+                      <MapPin className="w-5 h-5 text-primary shrink-0" />
+                      <span>Agartala, Tripura, India</span>
+                    </li>
                   </ul>
                   
                   <Button 

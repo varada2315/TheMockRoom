@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { Quote, Star } from 'lucide-react';
+import { Quote, Star, MapPin } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 
@@ -41,17 +41,17 @@ export function Testimonials({ onBookSession }: TestimonialsProps) {
                 {
                   quote: "I had the technical skills, but during interviews, I would freeze. The Mock Room didn't just give me feedback; they gave me a battle-tested script for my own mind. I landed my first choice.",
                   name: "Rahul Deka",
-                  org: "NIT Silchar"
+                  org: "Top-tier Engineering University"
                 },
                 {
                   quote: "The AI Gap Report was a wake-up call. Seeing data on my filler words and weak structural answers changed how I prep completely. It's the most honest feedback I've ever received.",
                   name: "Priya Sharma",
-                  org: "Tezpur University"
+                  org: "National Research Institute"
                 },
                 {
                   quote: "The simulation pressure is real. When I sat for my actual corporate interview, it felt easy compared to what the Mock Room panel put me through. The confidence is permanent.",
                   name: "Samuel K.",
-                  org: "Don Bosco Guwahati"
+                  org: "Global Business School"
                 }
               ].map((item, idx) => (
                 <motion.div 
@@ -75,6 +75,12 @@ export function Testimonials({ onBookSession }: TestimonialsProps) {
                   </div>
                 </motion.div>
               ))}
+            </div>
+            <div className="mt-16 flex justify-center">
+              <li className="flex items-center gap-3 text-muted-foreground">
+                <MapPin className="w-5 h-5 text-primary" />
+                <span>Operating across India</span>
+              </li>
             </div>
           </div>
         </section>
