@@ -18,7 +18,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground dark noise-bg">
+    <div className="min-h-screen bg-background text-foreground noise-bg">
       <Home onBookSession={openModal} />
       <BookingModal 
         isOpen={isModalOpen} 

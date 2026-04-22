@@ -50,57 +50,57 @@
 }
 
 :root {
-  /* Enforce dark mode colors on root */
-  --background: 240 20% 5%; /* #0A0A0F */
-  --foreground: 37 24% 93%; /* #F0EDE8 */
+  /* Light blue & white theme with logo accents (purple + amber/orange) */
+  --background: 0 0% 100%; /* white */
+  --foreground: 220 40% 12%; /* deep navy */
 
-  --card: 240 16% 9%; /* #13131A */
-  --card-foreground: 37 24% 93%;
-  --card-border: 240 10% 15%;
+  --card: 210 40% 99%;
+  --card-foreground: 220 40% 12%;
+  --card-border: 215 30% 90%;
 
-  --popover: 240 16% 9%;
-  --popover-foreground: 37 24% 93%;
-  --popover-border: 240 10% 15%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 40% 12%;
+  --popover-border: 215 30% 90%;
 
-  --primary: 42 63% 55%; /* #D4A843 Electric gold */
-  --primary-foreground: 240 20% 5%;
+  --primary: 220 90% 52%; /* vibrant blue */
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 34 64% 46%; /* #C17F2A Warm amber */
-  --secondary-foreground: 37 24% 93%;
+  --secondary: 28 95% 55%; /* warm orange/amber from logo */
+  --secondary-foreground: 0 0% 100%;
 
-  --muted: 240 16% 9%;
-  --muted-foreground: 240 7% 57%; /* #8A8A9A Slate */
+  --muted: 210 35% 96%;
+  --muted-foreground: 220 12% 42%;
 
-  --accent: 34 64% 46%;
-  --accent-foreground: 37 24% 93%;
+  --accent: 260 75% 60%; /* purple from logo */
+  --accent-foreground: 0 0% 100%;
 
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 37 24% 93%;
+  --destructive: 0 84% 55%;
+  --destructive-foreground: 0 0% 100%;
 
-  --border: 240 10% 15%;
-  --input: 240 16% 9%;
-  --ring: 42 63% 55%;
+  --border: 215 25% 88%;
+  --input: 210 35% 96%;
+  --ring: 220 90% 52%;
 
   --app-font-sans: 'DM Sans', sans-serif;
   --app-font-serif: 'Cormorant Garamond', serif;
   --app-font-display: 'Bebas Neue', sans-serif;
   --radius: 0.5rem;
 
-  --button-outline: rgba(255,255,255, .10);
-  --badge-outline: rgba(255,255,255, .05);
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
 
-  --opaque-button-border-intensity: 9;
-  --elevate-1: rgba(255,255,255, .04);
-  --elevate-2: rgba(255,255,255, .09);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(0,0,0, .03);
+  --elevate-2: rgba(0,0,0, .07);
 
-  --shadow-2xs: 0px 2px 0px 0px rgba(0,0,0, 0.5);
-  --shadow-xs: 0px 2px 0px 0px rgba(0,0,0, 0.5);
-  --shadow-sm: 0px 2px 0px 0px rgba(0,0,0, 0.5), 0px 1px 2px -1px rgba(0,0,0, 0.5);
-  --shadow: 0px 2px 0px 0px rgba(0,0,0, 0.5), 0px 1px 2px -1px rgba(0,0,0, 0.5);
-  --shadow-md: 0px 2px 0px 0px rgba(0,0,0, 0.5), 0px 2px 4px -1px rgba(0,0,0, 0.5);
-  --shadow-lg: 0px 2px 0px 0px rgba(0,0,0, 0.5), 0px 4px 6px -1px rgba(0,0,0, 0.5);
-  --shadow-xl: 0px 2px 0px 0px rgba(0,0,0, 0.5), 0px 8px 10px -1px rgba(0,0,0, 0.5);
-  --shadow-2xl: 0px 2px 0px 0px rgba(0,0,0, 0.5);
+  --shadow-2xs: 0px 1px 2px 0px rgba(15, 30, 80, 0.04);
+  --shadow-xs: 0px 1px 2px 0px rgba(15, 30, 80, 0.06);
+  --shadow-sm: 0px 1px 2px 0px rgba(15, 30, 80, 0.06), 0px 1px 3px -1px rgba(15, 30, 80, 0.08);
+  --shadow: 0px 2px 4px 0px rgba(15, 30, 80, 0.06), 0px 1px 3px -1px rgba(15, 30, 80, 0.08);
+  --shadow-md: 0px 4px 6px -1px rgba(15, 30, 80, 0.08), 0px 2px 4px -2px rgba(15, 30, 80, 0.06);
+  --shadow-lg: 0px 10px 15px -3px rgba(15, 30, 80, 0.08), 0px 4px 6px -4px rgba(15, 30, 80, 0.06);
+  --shadow-xl: 0px 20px 25px -5px rgba(15, 30, 80, 0.10), 0px 8px 10px -6px rgba(15, 30, 80, 0.06);
+  --shadow-2xl: 0px 25px 50px -12px rgba(15, 30, 80, 0.18);
 }
 
 .dark {

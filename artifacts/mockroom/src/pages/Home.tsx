@@ -85,8 +85,7 @@ export function Home({ onBookSession }: HomeProps) {
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${import.meta.env.BASE_URL}hero-bg.png)` }}
             ></div>
-            <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/75 to-background"></div>
-            <div className="absolute inset-0 bg-background/40"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/55 to-background"></div>
             <div className="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] bg-primary/10 rounded-full blur-[120px] mix-blend-screen"></div>
             <div className="absolute bottom-1/4 right-1/4 w-[30vw] h-[30vw] bg-secondary/10 rounded-full blur-[100px] mix-blend-screen"></div>
           </motion.div>
