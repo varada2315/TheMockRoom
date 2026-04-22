@@ -81,9 +81,9 @@
   --input: 210 35% 96%;
   --ring: 220 90% 52%;
 
-  --app-font-sans: 'DM Sans', sans-serif;
-  --app-font-serif: 'Cormorant Garamond', serif;
-  --app-font-display: 'Bebas Neue', sans-serif;
+  --app-font-sans: 'DM Sans', 'Plus Jakarta Sans', sans-serif;
+  --app-font-serif: 'Plus Jakarta Sans', sans-serif;
+  --app-font-display: 'Plus Jakarta Sans', sans-serif;
   --radius: 0.5rem;
 
   --button-outline: rgba(0,0,0, .10);
@@ -118,6 +118,12 @@
   
   html {
     scroll-behavior: smooth;
+  }
+
+  .font-serif,
+  .font-display {
+    font-weight: 800;
+    letter-spacing: -0.02em;
   }
 }
 
