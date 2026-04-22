@@ -47,17 +47,20 @@ export function Services({ onBookSession }: ServicesProps) {
                 {
                   step: "01",
                   title: "AI Diagnostic",
-                  desc: "5-level adaptive assessment tailored to your target company (e.g., Product Engineer at Google or Analyst at TCS)."
+                  desc: "5-level adaptive assessment tailored to your target company (e.g., Product Engineer at Google or Analyst at TCS).",
+                  image: "/stock/ai-viz.png"
                 },
                 {
                   step: "02",
                   title: "Gap Analysis",
-                  desc: "Instant AI report identifying your structural behavioral and technical gaps before the human mentor steps in."
+                  desc: "Instant AI report identifying your structural behavioral and technical gaps before the human mentor steps in.",
+                  image: "/stock/simulation.png"
                 },
                 {
                   step: "03",
                   title: "Human Mentorship",
-                  desc: "Live intensive sessions led by industry experts who use your AI data to surgically fix your performance."
+                  desc: "Live intensive sessions led by industry experts who use your AI data to surgically fix your performance.",
+                  image: "/stock/mission.png"
                 }
               ].map((item, idx) => (
                 <motion.div 
@@ -66,13 +69,19 @@ export function Services({ onBookSession }: ServicesProps) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.2, duration: 0.6 }}
-                  className="relative z-10 flex flex-col items-center md:items-start text-center md:text-left bg-background/50 backdrop-blur-sm p-8 rounded-2xl border border-border hover:border-primary/50 transition-colors"
+                  className="relative z-10 flex flex-col bg-card/50 backdrop-blur-sm rounded-2xl border border-border hover:border-primary/50 transition-all duration-500 overflow-hidden group"
                 >
-                  <div className="w-24 h-24 rounded-full bg-card border-2 border-primary flex items-center justify-center mb-8 mx-auto md:mx-0 shadow-[0_0_30px_rgba(212,168,67,0.15)]">
-                    <span className="font-serif text-3xl text-primary">{item.step}</span>
+                  <div className="aspect-video overflow-hidden relative">
+                    <img src={item.image} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" alt={item.title} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-80"></div>
+                    <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-primary/10 backdrop-blur-md border border-primary/20 flex items-center justify-center">
+                      <span className="font-display text-lg text-primary">{item.step}</span>
+                    </div>
                   </div>
-                  <h3 className="font-display text-3xl uppercase tracking-wider mb-4 text-foreground">{item.title}</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">{item.desc}</p>
+                  <div className="p-8">
+                    <h3 className="font-display text-2xl uppercase tracking-wider mb-4 text-white group-hover:text-primary transition-colors">{item.title}</h3>
+                    <p className="text-white/70 font-light leading-relaxed text-sm">{item.desc}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -103,7 +112,7 @@ export function Services({ onBookSession }: ServicesProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
                 { title: "Simulation Over Information", desc: "You don't need another PDF on how to interview. You need reps in the hot seat under real pressure." },
-                { title: "Hyper-Localized for Northeast India", desc: "We understand the specific cultural and educational context of graduates from this region." },
+                { title: "Pan-India Perspective", desc: "We bridge the gap for candidates from all over India, catering to the specific cultural and educational nuances of the national job market." },
                 { title: "AI Gap Report Feedback System", desc: "Objective, data-driven analysis of your performance. No vague feedback, only actionable metrics." },
                 { title: "Closed-Loop Hiring Ecosystem", desc: "We aren't just prep; we are a pipeline. If you prove you're ready, we connect you directly to hiring managers." }
               ].map((item, idx) => (
@@ -173,10 +182,10 @@ export function Services({ onBookSession }: ServicesProps) {
               variants={fadeIn}
               className="text-center max-w-3xl mx-auto mb-20"
             >
-              <h2 className="font-display text-5xl md:text-6xl text-foreground uppercase tracking-tight mb-6">
+              <h2 className="font-display text-5xl md:text-6xl text-white uppercase tracking-tight mb-6">
                 Choose Your Battlefield
               </h2>
-              <p className="text-lg text-muted-foreground font-light">
+              <p className="text-lg text-white/70 font-light">
                 Investment in preparation pays the best interest in negotiation.
               </p>
             </motion.div>
@@ -230,27 +239,27 @@ export function Services({ onBookSession }: ServicesProps) {
                   )}
                   
                   <div className="mb-8 border-b border-border pb-8 text-center">
-                    <h3 className="font-display text-2xl uppercase tracking-wider text-foreground mb-2">{tier.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-6">{tier.subtitle}</p>
+                    <h3 className="font-display text-2xl uppercase tracking-wider text-white mb-2">{tier.title}</h3>
+                    <p className="text-white/60 text-sm mb-6">{tier.subtitle}</p>
                     <div className="flex items-baseline justify-center gap-1">
                       <span className="text-2xl text-primary font-medium">₹</span>
-                      <span className="font-serif text-6xl text-foreground leading-none">{tier.price}</span>
+                      <span className="font-serif text-6xl text-white leading-none">{tier.price}</span>
                     </div>
                     <span className="text-muted-foreground text-sm block mt-2">{tier.unit}</span>
                   </div>
                   
-                  <ul className="space-y-4 mb-10 flex-grow">
-                    {tier.features.map((feat, fidx) => (
-                      <li key={fidx} className="flex items-center gap-3 text-muted-foreground font-light">
-                        <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                        {feat}
+                    <ul className="space-y-4 mb-10 flex-grow">
+                      {tier.features.map((feat, fidx) => (
+                        <li key={fidx} className="flex items-center gap-3 text-white/70 font-light">
+                          <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                          {feat}
+                        </li>
+                      ))}
+                      <li className="flex items-start gap-3 text-white/60 text-sm">
+                        <MapPin className="w-5 h-5 text-primary shrink-0" />
+                        <span>Agartala, Tripura, India</span>
                       </li>
-                    ))}
-                    <li className="flex items-start gap-3 text-muted-foreground text-sm">
-                      <MapPin className="w-5 h-5 text-primary shrink-0" />
-                      <span>Agartala, Tripura, India</span>
-                    </li>
-                  </ul>
+                    </ul>
                   
                   <Button 
                     onClick={() => onBookSession(tier.id)}

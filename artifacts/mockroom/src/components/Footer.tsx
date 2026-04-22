@@ -16,50 +16,50 @@ export function Footer() {
                     alt="The Mock Room Logo" 
                     className="h-12 w-auto object-contain transition-all duration-500"
                   />
-                  <span className="font-serif text-2xl font-semibold tracking-wide text-foreground">
+                  <span className="font-serif text-2xl font-semibold tracking-wide text-white">
                     The Mock Room
                   </span>
                 </a>
               </Link>
             </div>
-            <p className="text-muted-foreground text-lg max-w-sm mb-6 font-serif italic">
+            <p className="text-white/80 text-lg max-w-sm mb-6 font-serif italic">
               "Breaking Traditional Molds, Building Futures"
             </p>
-            <p className="text-sm text-muted-foreground/70">
-              An AI-powered interview simulation platform dedicated to helping college graduates in Northeast India land their dream corporate jobs.
-            </p>
+                <p className="mt-6 text-white/60 text-sm leading-relaxed max-w-xs">
+                  The boardroom simulation for India's next-gen leaders. Master the silent rules and bridge the gap between academic theory and corporate dominance.
+                </p>
           </div>
 
           <div>
-            <h4 className="font-display tracking-widest text-xl mb-6 text-foreground">Quick Links</h4>
+            <h4 className="font-display tracking-widest text-xl mb-6 text-white">Quick Links</h4>
             <ul className="space-y-4">
               <li>
-                <Link href="/"><a className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">Home</a></Link>
+                <Link href="/"><a className="text-white/60 hover:text-primary transition-colors text-sm uppercase tracking-wider">Home</a></Link>
               </li>
               <li>
-                <Link href="/about"><a className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">About Us</a></Link>
+                <Link href="/about"><a className="text-white/60 hover:text-primary transition-colors text-sm uppercase tracking-wider">About Us</a></Link>
               </li>
               <li>
-                <Link href="/services"><a className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">Services</a></Link>
+                <Link href="/services"><a className="text-white/60 hover:text-primary transition-colors text-sm uppercase tracking-wider">Services</a></Link>
               </li>
               <li>
-                <Link href="/testimonials"><a className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">Testimonials</a></Link>
+                <Link href="/testimonials"><a className="text-white/60 hover:text-primary transition-colors text-sm uppercase tracking-wider">Testimonials</a></Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-display tracking-widest text-xl mb-6 text-foreground">Contact</h4>
+            <h4 className="font-display tracking-widest text-xl mb-6 text-white">Contact</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-muted-foreground text-sm">
+              <li className="flex items-start gap-3 text-white/60 text-sm">
                 <MapPin className="w-5 h-5 text-primary shrink-0" />
                 <span>Agartala, Tripura, India</span>
               </li>
-              <li className="flex items-center gap-3 text-muted-foreground text-sm">
+              <li className="flex items-center gap-3 text-white/60 text-sm">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
                 <span>+91 70858 09332</span>
               </li>
-              <li className="flex items-center gap-3 text-muted-foreground text-sm">
+              <li className="flex items-center gap-3 text-white/60 text-sm">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
                 <span>Themockroomoperates@gmail.com</span>
               </li>
@@ -70,7 +70,7 @@ export function Footer() {
                 href="https://www.linkedin.com/company/the-mock-room/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-card border border-border hover:border-primary hover:text-primary transition-all duration-300"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-card border border-border hover:border-primary hover:text-primary text-white transition-all duration-300"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
@@ -79,13 +79,13 @@ export function Footer() {
         </div>
 
         <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted-foreground/60">
+          <p className="text-xs text-white/40">
             &copy; 2025 The Mock Room | Rolecraft Solutions LLP. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-xs text-muted-foreground/60 hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="text-xs text-muted-foreground/60 hover:text-primary transition-colors">Terms & Conditions</a>
-            <a href="#" className="text-xs text-muted-foreground/60 hover:text-primary transition-colors">Refund Policy</a>
+            <a href="#" className="text-xs text-white/40 hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#" className="text-xs text-white/40 hover:text-primary transition-colors">Terms & Conditions</a>
+            <a href="#" className="text-xs text-white/40 hover:text-primary transition-colors">Refund Policy</a>
           </div>
         </div>
       </div>

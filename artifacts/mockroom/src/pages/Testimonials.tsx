@@ -32,9 +32,52 @@ export function Testimonials({ onBookSession }: TestimonialsProps) {
               </h1>
               <div className="h-[1px] w-24 bg-primary mx-auto"></div>
               <p className="mt-6 text-lg text-muted-foreground font-light max-w-2xl mx-auto">
-                Stories of transformation from students who faced their fears and claimed their futures.
+                Stories of transformation from professionals who mastered the silent rules.
               </p>
             </motion.div>
+
+            {/* VIDEO TESTIMONIALS */}
+            <div className="mb-24">
+              <h2 className="font-display text-2xl md:text-3xl text-foreground uppercase tracking-widest text-center mb-12">
+                Video Success Stories
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                {[
+                  {
+                    name: "Nabhanil Chakraborty",
+                    role: "Placed at PwC Bangalore",
+                    src: "/testimonial-nabhanil.mp4"
+                  },
+                  {
+                    name: "Somdatta Bhattacharjee",
+                    role: "Placed at Bleep Education, Agartala",
+                    src: "/testimonial-somdatta.mp4"
+                  }
+                ].map((video, idx) => (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.2 }}
+                    className="group relative bg-card border border-border overflow-hidden rounded-2xl shadow-xl"
+                  >
+                    <div className="aspect-[9/16] bg-black relative">
+                      <video 
+                        src={video.src}
+                        className="w-full h-full object-cover"
+                        controls
+                        playsInline
+                      />
+                    </div>
+                    <div className="p-6">
+                      <p className="font-display uppercase tracking-widest text-foreground font-bold">{video.name}</p>
+                      <p className="text-sm text-primary">{video.role}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[

@@ -19,20 +19,28 @@ export function About({ onBookSession }: AboutProps) {
       <Navbar onBookSession={onBookSession} />
       <main className="w-full pt-20">
         {/* ORIGIN STORY */}
-        <section className="py-24 md:py-32 relative">
+        <section className="py-24 md:py-32 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-5 -z-10">
+            <img src="/stock/hero.png" className="w-full h-full object-cover" alt="" />
+          </div>
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               <motion.div 
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
                 variants={fadeIn}
-                className="lg:col-span-5"
+                className="lg:col-span-6 relative"
               >
-                <h1 className="font-display text-5xl md:text-7xl text-foreground uppercase tracking-tight mb-8">
-                  Why The Mock Room Exists
-                </h1>
-                <div className="h-[1px] w-24 bg-primary mb-8"></div>
+                <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-border shadow-2xl relative group">
+                  <img src="/stock/founder.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Founder of The Mock Room" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-transparent to-transparent opacity-60"></div>
+                  <div className="absolute bottom-8 left-8">
+                    <p className="font-display tracking-[0.2em] uppercase text-xs text-primary font-bold mb-2">Our Founder</p>
+                    <h3 className="font-display text-2xl uppercase tracking-widest text-white">Agradip Majumder</h3>
+                  </div>
+                </div>
+                <div className="absolute -top-6 -right-6 w-32 h-32 border-t-2 border-r-2 border-primary/20 rounded-tr-3xl -z-10"></div>
               </motion.div>
               
               <motion.div 
@@ -40,32 +48,24 @@ export function About({ onBookSession }: AboutProps) {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
                 variants={fadeIn}
-                className="lg:col-span-7 lg:pl-12"
+                className="lg:col-span-6"
               >
                 <div className="relative">
-                  <Quote className="absolute -top-6 -left-8 md:-top-10 md:-left-12 w-16 h-16 md:w-24 md:h-24 text-primary/10 -z-10 transform -rotate-12" />
+                  <h1 className="font-display text-5xl md:text-7xl text-foreground uppercase tracking-tight mb-8">
+                    The <span className="text-primary italic">Why.</span>
+                  </h1>
+                  <Quote className="absolute -top-10 -right-4 w-20 h-20 text-primary/10 -z-10 transform rotate-12" />
                   
-                  <div className="space-y-6 text-lg md:text-xl font-light text-muted-foreground leading-relaxed">
+                  <div className="space-y-6 text-lg font-light text-muted-foreground leading-relaxed">
                     <p>
-                      I still remember the look in their eyes. Every day, I met them—brilliant students, hard-working graduates, and sharp minds who had spent years chasing a degree, only to be met with a wall of silence. They had the knowledge, they had the heart, but when they walked into a boardroom, the words wouldn't come.
+                      I still remember the look in their eyes. Every day, I met them—brilliant students, hard-working graduates, and sharp minds who had spent years chasing a degree, only to be met with a wall of silence.
                     </p>
-                    <p>
-                      It broke me to see life-changing opportunities slip away, not because they weren't smart enough, but because they had never been taught how to speak their truth under pressure.
-                    </p>
-                    <p className="font-serif text-2xl md:text-3xl text-foreground leading-snug my-8 border-l-4 border-primary pl-6 py-2 italic">
-                      I started The Mock Room with a single, emotional conviction: <span className="text-primary font-semibold">Confidence shouldn't be a luxury.</span> I wanted to create a sanctuary where a student could fail, learn, and find their voice without breaking the bank.
+                    <p className="font-serif text-2xl text-foreground leading-snug my-8 border-l-4 border-primary pl-6 py-2 italic bg-primary/5 rounded-r-xl pr-6">
+                      I started The Mock Room because <span className="text-primary font-semibold">confidence shouldn't be a luxury.</span> I wanted to create a sanctuary where a student could fail, learn, and find their voice.
                     </p>
                     <p>
                       We exist because no dream should die in the gap between a degree and an offer letter. We are here to turn that silence into a 'Yes.'
                     </p>
-                  </div>
-                  
-                  <div className="mt-12 flex items-center gap-4">
-                    <div className="w-12 h-[1px] bg-border"></div>
-                    <div>
-                      <p className="font-display tracking-widest uppercase text-foreground">Agradip Majumder</p>
-                      <p className="text-sm text-primary">Founder, The Mock Room</p>
-                    </div>
                   </div>
                 </div>
               </motion.div>
