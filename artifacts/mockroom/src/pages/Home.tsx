@@ -79,8 +79,14 @@ export function Home({ onBookSession }: HomeProps) {
         <section id="home" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-20">
           <motion.div 
             style={{ y: yHeroBg, opacity: opacityHero }}
-            className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none"
+            className="absolute inset-0 z-0 pointer-events-none"
           >
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${import.meta.env.BASE_URL}hero-bg.png)` }}
+            ></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/75 to-background"></div>
+            <div className="absolute inset-0 bg-background/40"></div>
             <div className="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] bg-primary/10 rounded-full blur-[120px] mix-blend-screen"></div>
             <div className="absolute bottom-1/4 right-1/4 w-[30vw] h-[30vw] bg-secondary/10 rounded-full blur-[100px] mix-blend-screen"></div>
           </motion.div>
@@ -134,15 +140,6 @@ export function Home({ onBookSession }: HomeProps) {
             </motion.div>
           </div>
 
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1 }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-muted-foreground/50"
-          >
-            <span className="text-xs uppercase tracking-widest font-medium">Scroll to explore</span>
-            <div className="w-[1px] h-12 bg-gradient-to-b from-primary/50 to-transparent"></div>
-          </motion.div>
         </section>
 
         {/* STATS BAR */}

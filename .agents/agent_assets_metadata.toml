@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "_2Mr2p8z1PcWt9Uzjhxn8"
+uri = "file://artifacts/mockroom/public/hero-bg.png"
+type = "image"
+title = "boardroom hero bg"
