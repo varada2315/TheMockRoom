@@ -9,7 +9,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-2 pr-0 md:pr-12">
             <div className="flex items-center gap-3 mb-6">
               <img 
-                src={`${import.meta.env.BASE_URL}logo.webp`} 
+                src={`${import.meta.env.BASE_URL}logo.png`} 
                 alt="The Mock Room Logo" 
                 className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500"
               />

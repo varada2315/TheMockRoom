@@ -47,7 +47,7 @@ export function Navbar({ onBookSession }: NavbarProps) {
             className="flex items-center gap-3 group"
           >
             <img 
-              src={`${import.meta.env.BASE_URL}logo.webp`} 
+              src={`${import.meta.env.BASE_URL}logo.png`} 
               alt="The Mock Room Logo" 
               className="h-10 w-auto md:h-12 object-contain"
             />
