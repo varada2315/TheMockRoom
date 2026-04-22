@@ -1,0 +1,164 @@
+Build a complete, production-grade marketing website for "The Mock Room" — an AI-powered interview simulation platform by Rolecraft Solutions LLP that helps college graduates in Northeast India land corporate jobs.
+
+---
+
+## BRAND IDENTITY & AESTHETIC
+
+**Tagline:** "Breaking Traditional Molds, Building Futures"
+**Tone:** Premium, professional, story-driven. Think: dark luxury meets bold editorial. NOT corporate-bland. Think McKinsey meets a rebellion.
+
+**Color Palette (use CSS variables):**
+- Background: Deep charcoal black (#0A0A0F)
+- Primary Accent: Electric gold (#D4A843)
+- Secondary Accent: Warm amber (#C17F2A)
+- Text: Off-white (#F0EDE8)
+- Muted Text: Slate (#8A8A9A)
+- Surface Cards: (#13131A)
+
+**Typography:**
+- Display/Hero: "Cormorant Garamond" (Google Fonts) — elegant, editorial
+- Headings: "Bebas Neue" or "Playfair Display"
+- Body: "DM Sans"
+
+**Visual Language:** Grain texture overlays, sharp gold underlines, bold section dividers, subtle animated gradients. Asymmetric layouts, large typography contrasts.
+
+---
+
+## PAGES / SECTIONS (Single Page App)
+
+Build all in one HTML file with smooth scroll navigation.
+
+### 1. NAVBAR
+- Logo: "The Mock Room" in gold accent font, left aligned
+- Nav links: Home, About, Services, Testimonials, Contact
+- CTA Button: "Book a Session" (gold, rounded)
+- Sticky on scroll with blur backdrop
+
+---
+
+### 2. HERO SECTION
+- Full-viewport height
+- Main headline (massive, 2-line): **"Why 90% of Graduates Fail."**
+- Sub-headline: *"Master the hidden rules of the boardroom."*
+- Supporting text: "We simulate the interview before the interview. Turn silence into 'Yes.'"
+- Two CTAs side-by-side:
+  - **"Book a Session"** (gold filled button — opens modal)
+  - **"See How It Works"** (ghost/outline button — scrolls to services)
+- Animated background: subtle floating particles OR gradient noise mesh
+- Scroll indicator arrow at bottom
+
+---
+
+### 3. SOCIAL PROOF BAR (Stats Strip)
+Animated counter on scroll into view:
+- **500+** Paid Users
+- **₹80,000+** Revenue Generated
+- **20+** Successful Job Placements
+- **60-min** High-Fidelity Simulations
+
+---
+
+### 4. ORIGIN STORY / FOUNDER'S NOTE
+Headline: **"Why The Mock Room Exists"**
+
+Story text (use this content, styled in elegant editorial format with pull-quotes):
+"I still remember the look in their eyes. Every day, I met them—brilliant students, hard-working graduates, and sharp minds who had spent years chasing a degree, only to be met with a wall of silence. They had the knowledge, they had the heart, but when they walked into a boardroom, the words wouldn't come.
+
+It broke me to see life-changing opportunities slip away, not because they weren't smart enough, but because they had never been taught how to speak their truth under pressure.
+
+I started The Mock Room with a single, emotional conviction: Confidence shouldn't be a luxury. I wanted to create a sanctuary where a student could fail, learn, and find their voice without breaking the bank.
+
+We exist because no dream should die in the gap between a degree and an offer letter. We are here to turn that silence into a 'Yes.'"
+
+- Founder: **Agradip Majumder**
+- Pull-quote highlighted: *"Confidence shouldn't be a luxury."*
+
+---
+
+### 5. HOW IT WORKS (3-Step Process)
+Dark card layout, horizontal on desktop, vertical on mobile:
+1. **Simulate** — 60-minute real boardroom-style interview sessions
+2. **Diagnose** — AI-powered "Gap Report" identifies weaknesses
+3. **Place** — Top performers get direct placement with partner companies
+
+---
+
+### 6. SERVICES & PRICING
+Headline: **"Choose Your Battlefield"**
+
+3 cards (gold border on hover):
+- **Basic/Medium Session** — ₹249 per session — Individual 1-on-1 prep
+- **Comprehensive Advanced** — ₹499 per session — Deep-dive role-specific prep
+- **Monthly Batch** — ₹999/month — Group simulations + AI Gap Report
+
+Each card: feature list, price (large gold), and CTA "Book Now" button that opens the booking modal.
+
+---
+
+### 7. WHY US / DIFFERENTIATORS
+Headline: **"Not Another Career Course"**
+
+Grid of 4 feature cards:
+- Simulation Over Information
+- Hyper-Localized for Northeast India
+- AI Gap Report Feedback System
+- Closed-Loop Hiring Ecosystem (we place you directly)
+
+---
+
+### 8. TESTIMONIALS
+Headline: **"From the Boardroom's Edge"**
+
+Horizontal scroll carousel or 3-card grid. Use placeholder testimonial cards styled with:
+- Large quote mark in gold
+- 5-star rating
+- Name + College/City
+- Short quote text
+
+---
+
+### 9. BOOKING MODAL (Triggered by "Book a Session" CTAs)
+Full-screen overlay modal, dark background:
+
+Form fields:
+- Full Name
+- Email Address
+- Phone Number
+- Job Role (text input or dropdown with options: Software Engineer, Data Analyst, Marketing, Sales, Finance, Operations, Other)
+- Dream Company (text input)
+- Session Type (dropdown: Basic ₹249 / Advanced ₹499 / Monthly Batch ₹999)
+
+Submit button: "Claim My Session" (gold)
+Note below: "Our team will reach out within 24 hours."
+Close button top-right.
+
+---
+
+### 10. MISSION & VISION
+Two columns side by side:
+- **Mission:** "To ensure that no talent goes unnoticed and no dream goes unspoken — giving every student a fearless voice and a fair shot at the boardroom."
+- **Vision:** "To build a world where a student's future is defined by their potential, not their paycheck — making elite career success a birthright, not a privilege."
+
+---
+
+### 11. FOOTER
+Dark, minimal:
+- Logo + tagline
+- Quick links: Privacy Policy, Terms & Conditions, Refund Policy
+- Contact: Phone, Email, WhatsApp, Office Address (use placeholder text for address)
+- LinkedIn icon linking to: https://www.linkedin.com/company/the-mock-room/
+- Copyright: © 2025 The Mock Room | Rolecraft Solutions LLP
+
+---
+
+## TECHNICAL REQUIREMENTS
+
+- Single HTML file (HTML + CSS + JS inline)
+- Fully responsive (mobile-first)
+- Smooth scroll between sections
+- Scroll-triggered animations (Intersection Observer API) for counters and fade-ins
+- Modal open/close with keyboard (ESC) support
+- No external frameworks — vanilla HTML/CSS/JS only
+- Load Google Fonts: Cormorant Garamond, Bebas Neue, DM Sans
+- Grain texture on hero via CSS filter or SVG overlay
+- DO NOT use purple gradients, Inter font, or generic AI aesthetics

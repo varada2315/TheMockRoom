@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "The Mock Room"
+version = "1.0.0"
+id = "artifacts/mockroom"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18446
+
+[services.development]
+run = "pnpm --filter @workspace/mockroom run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/mockroom", "run", "build" ]
+publicDir = "artifacts/mockroom/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18446"
+BASE_PATH = "/"
