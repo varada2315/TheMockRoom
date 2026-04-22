@@ -12,10 +12,13 @@ export function Footer() {
               <Link href="/">
                 <a className="flex items-center gap-3">
                   <img 
-                    src={`${import.meta.env.BASE_URL}logo.png`} 
+                    src={`${import.meta.env.BASE_URL}logo.webp`} 
                     alt="The Mock Room Logo" 
-                    className="h-10 md:h-12 w-auto object-contain transition-all duration-500"
+                    className="h-12 w-auto object-contain transition-all duration-500"
                   />
+                  <span className="font-serif text-2xl font-semibold tracking-wide text-foreground">
+                    The Mock Room
+                  </span>
                 </a>
               </Link>
             </div>

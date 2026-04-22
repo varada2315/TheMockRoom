@@ -30,10 +30,13 @@ export function Navbar({ onBookSession }: NavbarProps) {
           <Link href="/">
             <a className="flex items-center gap-3 group">
               <img 
-                src={`${import.meta.env.BASE_URL}logo.png`} 
+                src={`${import.meta.env.BASE_URL}logo.webp`} 
                 alt="The Mock Room Logo" 
-                className="h-8 md:h-10 w-auto object-contain"
+                className="h-10 md:h-12 w-auto object-contain"
               />
+              <span className="font-serif text-xl md:text-2xl font-semibold tracking-wide text-foreground group-hover:text-primary transition-colors">
+                The Mock Room
+              </span>
             </a>
           </Link>
 
