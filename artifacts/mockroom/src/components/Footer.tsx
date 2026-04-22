@@ -1,5 +1,6 @@
 import React from 'react';
 import { Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { Link } from 'wouter';
 
 export function Footer() {
   return (
@@ -8,14 +9,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2 pr-0 md:pr-12">
             <div className="flex items-center gap-3 mb-6">
-              <img 
-                src={`${import.meta.env.BASE_URL}logo.png`} 
-                alt="The Mock Room Logo" 
-                className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500"
-              />
-              <span className="font-serif text-2xl font-semibold tracking-wide text-foreground">
-                The Mock Room
-              </span>
+              <Link href="/">
+                <a className="flex items-center gap-3">
+                  <img 
+                    src={`${import.meta.env.BASE_URL}logo.png`} 
+                    alt="The Mock Room Logo" 
+                    className="h-10 md:h-12 w-auto object-contain transition-all duration-500"
+                  />
+                </a>
+              </Link>
             </div>
             <p className="text-muted-foreground text-lg max-w-sm mb-6 font-serif italic">
               "Breaking Traditional Molds, Building Futures"
@@ -29,16 +31,16 @@ export function Footer() {
             <h4 className="font-display tracking-widest text-xl mb-6 text-foreground">Quick Links</h4>
             <ul className="space-y-4">
               <li>
-                <a href="#home" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">Home</a>
+                <Link href="/"><a className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">Home</a></Link>
               </li>
               <li>
-                <a href="#about" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">About Us</a>
+                <Link href="/about"><a className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">About Us</a></Link>
               </li>
               <li>
-                <a href="#services" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">Services</a>
+                <Link href="/services"><a className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">Services</a></Link>
               </li>
               <li>
-                <a href="#testimonials" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">Testimonials</a>
+                <Link href="/testimonials"><a className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">Testimonials</a></Link>
               </li>
             </ul>
           </div>
