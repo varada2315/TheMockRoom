@@ -20,7 +20,7 @@ export function BookingModal({ isOpen, onClose, preselectedTier = '' }: BookingM
     phone: '',
     role: '',
     company: '',
-    tier: preselectedTier || 'Basic'
+    tier: preselectedTier || 'AI - ARTIFICIAL INTELLIGENCE'
   });
 
   useEffect(() => {
@@ -59,7 +59,7 @@ export function BookingModal({ isOpen, onClose, preselectedTier = '' }: BookingM
       phone: '',
       role: '',
       company: '',
-      tier: preselectedTier || 'Basic'
+      tier: preselectedTier || 'AI - ARTIFICIAL INTELLIGENCE'
     });
     onClose();
   };
@@ -183,19 +183,24 @@ export function BookingModal({ isOpen, onClose, preselectedTier = '' }: BookingM
                       />
                     </div>
                     <div>
-                      <Label htmlFor="tier" className="text-muted-foreground">Session Type</Label>
+                      <Label htmlFor="tier" className="text-muted-foreground">Course / Session Type</Label>
                       <Select 
                         value={formData.tier} 
                         onValueChange={v => setFormData({...formData, tier: v})}
                         required
                       >
                         <SelectTrigger className="bg-background/50 border-border focus:border-primary mt-1">
-                          <SelectValue placeholder="Select a tier" />
+                          <SelectValue placeholder="Select a course" />
                         </SelectTrigger>
                         <SelectContent className="bg-card border-border">
-                          <SelectItem value="Basic">Basic — ₹249</SelectItem>
-                          <SelectItem value="Advanced">Advanced — ₹499</SelectItem>
-                          <SelectItem value="Monthly">Monthly Batch — ₹999</SelectItem>
+                          <SelectItem value="AI - ARTIFICIAL INTELLIGENCE">AI - Artificial Intelligence — ₹9,499</SelectItem>
+                          <SelectItem value="IOT">IOT - Internet of Things — ₹9,499</SelectItem>
+                          <SelectItem value="WEB DEVELOPMENT">Web Development — ₹9,499</SelectItem>
+                          <SelectItem value="DIGITAL MARKETING">Digital Marketing — ₹9,499</SelectItem>
+                          <SelectItem value="VLSI">VLSI Design — ₹9,499</SelectItem>
+                          <SelectItem value="DATA SCIENCE">Data Science — ₹9,499</SelectItem>
+                          <SelectItem value="DATA ANALYTICS">Data Analytics — ₹9,499</SelectItem>
+                          <SelectItem value="MACHINE LEARNING">Machine Learning — ₹9,499</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>

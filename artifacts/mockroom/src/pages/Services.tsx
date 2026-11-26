@@ -79,8 +79,8 @@ export function Services({ onBookSession }: ServicesProps) {
                     </div>
                   </div>
                   <div className="p-8">
-                    <h3 className="font-display text-2xl uppercase tracking-wider mb-4 text-white group-hover:text-primary transition-colors">{item.title}</h3>
-                    <p className="text-white/70 font-light leading-relaxed text-sm">{item.desc}</p>
+                    <h3 className="font-display text-2xl uppercase tracking-wider mb-4 text-foreground group-hover:text-primary transition-colors">{item.title}</h3>
+                    <p className="text-muted-foreground font-light leading-relaxed text-sm">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -183,40 +183,80 @@ export function Services({ onBookSession }: ServicesProps) {
               className="text-center max-w-3xl mx-auto mb-20"
             >
               <h2 className="font-display text-5xl md:text-6xl text-white uppercase tracking-tight mb-6">
-                Choose Your Battlefield
+                Our Specialized Courses
               </h2>
               <p className="text-lg text-white/70 font-light">
-                Investment in preparation pays the best interest in negotiation.
+                Redefine your potential. Accelerate your career with our masterclasses.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {[
                 {
-                  id: "Monthly",
-                  title: "Monthly Batch",
-                  subtitle: "Full monthly immersion",
-                  price: "999",
-                  unit: "per month",
+                  id: "AI - ARTIFICIAL INTELLIGENCE",
+                  title: "AI - Artificial Intelligence",
+                  subtitle: "Neural Nets & Generative AI",
+                  price: "9,499",
+                  unit: "one-time enrollment",
                   popular: true,
-                  features: ["8 Total Sessions (2/week)", "Detailed AI Gap Report", "Peer Learning", "Direct Placement Pool"]
+                  features: ["Generative AI & LLMs", "Deep Learning Frameworks", "Neural Networks & NLP", "Industry Capstone Project", "1-on-1 Mentorship & Reviews"]
                 },
                 {
-                  id: "Basic",
-                  title: "Basic Session",
-                  subtitle: "Individual 1-on-1 Prep",
-                  price: "249",
-                  unit: "per session",
-                  features: ["60-Min Mock Interview", "Standard Feedback", "General Industry Focus"]
+                  id: "IOT",
+                  title: "IOT - Internet of Things",
+                  subtitle: "Smart Devices & Sensors",
+                  price: "9,499",
+                  unit: "one-time enrollment",
+                  features: ["Embedded Systems & MCUs", "Sensor Integration", "IoT Protocols (MQTT/HTTP)", "Cloud Platform Sync", "Real-World Deployments"]
                 },
                 {
-                  id: "Advanced",
-                  title: "Comprehensive",
-                  subtitle: "Premium 1-on-1 Guidance",
-                  price: "499",
-                  unit: "per session",
+                  id: "WEB DEVELOPMENT",
+                  title: "Web Development",
+                  subtitle: "Full Stack Mastery",
+                  price: "9,499",
+                  unit: "one-time enrollment",
+                  features: ["React.js Modern Frontend", "Node.js & Express Backend", "SQL & NoSQL Databases", "RESTful APIs & Auth", "Deployment & Hosting"]
+                },
+                {
+                  id: "DIGITAL MARKETING",
+                  title: "Digital Marketing",
+                  subtitle: "Growth & Brand Strategy",
+                  price: "9,499",
+                  unit: "one-time enrollment",
+                  features: ["SEO Optimization", "PPC & Performance Ads", "Social Media Strategy", "Web Analytics & ROI", "Conversion Optimization"]
+                },
+                {
+                  id: "VLSI",
+                  title: "VLSI Design",
+                  subtitle: "Silicon & Circuit Engineering",
+                  price: "9,499",
+                  unit: "one-time enrollment",
+                  features: ["Verilog / VHDL Coding", "ASIC / FPGA Flow", "Digital Design Basics", "Synthesis & Static Timing", "CMOS Circuits & Layout"]
+                },
+                {
+                  id: "DATA SCIENCE",
+                  title: "Data Science",
+                  subtitle: "Statistical Modeling & Analytics",
+                  price: "9,499",
+                  unit: "one-time enrollment",
+                  features: ["Python Data Ecosystem", "Probability & Statistics", "Predictive Modeling", "Feature Engineering", "Data Storytelling & Viz"]
+                },
+                {
+                  id: "DATA ANALYTICS",
+                  title: "Data Analytics",
+                  subtitle: "Business Intelligence",
+                  price: "9,499",
+                  unit: "one-time enrollment",
+                  features: ["SQL Querying & DBs", "Tableau & PowerBI Reports", "Advanced Excel Analytics", "KPI Dashboard Design", "Data-Driven Decisions"]
+                },
+                {
+                  id: "MACHINE LEARNING",
+                  title: "Machine Learning",
+                  subtitle: "Algorithms & Pipelines",
+                  price: "9,499",
+                  unit: "one-time enrollment",
                   premium: true,
-                  features: ["60-Min Mock Interview", "AI Gap Report", "Role-Specific Focus", "Resume Review", "Direct Human Mentorship"]
+                  features: ["Supervised & Unsupervised", "Scikit-Learn Pipelines", "Feature Selection & Tuning", "Model Deployment (APIs)", "Deep Learning Basics"]
                 }
               ].map((tier, idx) => (
                 <motion.div 
@@ -224,50 +264,50 @@ export function Services({ onBookSession }: ServicesProps) {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: idx * 0.2 }}
-                  className={`relative bg-card p-8 border ${tier.popular ? 'border-primary shadow-[0_0_40px_rgba(212,168,67,0.1)]' : tier.premium ? 'border-secondary shadow-[0_0_40px_rgba(31,107,255,0.05)]' : 'border-border'} flex flex-col transition-all duration-300 hover:-translate-y-2`}
+                  transition={{ delay: idx * 0.1 }}
+                  className={`relative bg-card p-6 border ${tier.popular ? 'border-primary shadow-[0_0_40px_rgba(212,168,67,0.1)]' : tier.premium ? 'border-secondary shadow-[0_0_40px_rgba(31,107,255,0.05)]' : 'border-border'} flex flex-col transition-all duration-300 hover:-translate-y-2`}
                 >
                   {tier.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-bold tracking-[0.2em] uppercase rounded-full">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-[10px] font-bold tracking-[0.2em] uppercase rounded-full">
                       Most Popular
                     </div>
                   )}
                   {tier.premium && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-secondary text-white text-xs font-bold tracking-[0.2em] uppercase rounded-full">
-                      Premium Service
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-secondary text-white text-[10px] font-bold tracking-[0.2em] uppercase rounded-full">
+                      Advanced Track
                     </div>
                   )}
                   
-                  <div className="mb-8 border-b border-border pb-8 text-center">
-                    <h3 className="font-display text-2xl uppercase tracking-wider text-white mb-2">{tier.title}</h3>
-                    <p className="text-white/60 text-sm mb-6">{tier.subtitle}</p>
+                  <div className="mb-6 border-b border-border pb-6 text-center">
+                    <h3 className="font-display text-lg uppercase tracking-wider text-foreground mb-2 min-h-[56px] flex items-center justify-center">{tier.title}</h3>
+                    <p className="text-muted-foreground text-xs mb-4">{tier.subtitle}</p>
                     <div className="flex items-baseline justify-center gap-1">
-                      <span className="text-2xl text-primary font-medium">₹</span>
-                      <span className="font-serif text-6xl text-white leading-none">{tier.price}</span>
+                      <span className="text-xl text-primary font-medium">₹</span>
+                      <span className="font-serif text-4xl text-foreground leading-none">{tier.price}</span>
                     </div>
-                    <span className="text-muted-foreground text-sm block mt-2">{tier.unit}</span>
+                    <span className="text-muted-foreground text-xs block mt-2">{tier.unit}</span>
                   </div>
                   
-                    <ul className="space-y-4 mb-10 flex-grow">
-                      {tier.features.map((feat, fidx) => (
-                        <li key={fidx} className="flex items-center gap-3 text-white/70 font-light">
-                          <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                          {feat}
-                        </li>
-                      ))}
-                      <li className="flex items-start gap-3 text-white/60 text-sm">
-                        <MapPin className="w-5 h-5 text-primary shrink-0" />
-                        <span>Agartala, Tripura, India</span>
+                  <ul className="space-y-3 mb-8 flex-grow">
+                    {tier.features.map((feat, fidx) => (
+                      <li key={fidx} className="flex items-center gap-2 text-muted-foreground font-light text-xs">
+                        <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                        {feat}
                       </li>
-                    </ul>
+                    ))}
+                    <li className="flex items-start gap-2 text-muted-foreground text-[10px]">
+                      <MapPin className="w-4 h-4 text-primary shrink-0" />
+                      <span>Agartala, Tripura, India</span>
+                    </li>
+                  </ul>
                   
                   <Button 
                     onClick={() => onBookSession(tier.id)}
-                    className={`w-full h-14 rounded-none text-lg font-display uppercase tracking-widest ${
+                    className={`w-full h-12 rounded-none text-sm font-display uppercase tracking-widest ${
                       tier.popular ? 'bg-primary text-primary-foreground hover:bg-primary/90' : 'bg-transparent border border-primary text-primary hover:bg-primary/10'
                     }`}
                   >
-                    Book Now
+                    Enroll Now
                   </Button>
                 </motion.div>
               ))}

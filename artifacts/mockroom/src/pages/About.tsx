@@ -33,7 +33,7 @@ export function About({ onBookSession }: AboutProps) {
                 className="lg:col-span-6 relative"
               >
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-border shadow-2xl relative group">
-                  <img src="/stock/founder.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Founder of The Mock Room" />
+                  <img src="/stock/ceo.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Founder of The Mock Room" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-transparent to-transparent opacity-60"></div>
                   <div className="absolute bottom-8 left-8">
                     <p className="font-display tracking-[0.2em] uppercase text-xs text-primary font-bold mb-2">Our Founder</p>

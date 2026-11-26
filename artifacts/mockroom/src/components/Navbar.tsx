@@ -1,8 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown, GraduationCap, UserCheck, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'wouter';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 interface NavbarProps {
   onBookSession: () => void;
@@ -10,7 +16,7 @@ interface NavbarProps {
 
 export function Navbar({ onBookSession }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -53,12 +59,42 @@ export function Navbar({ onBookSession }: NavbarProps) {
                 </Link>
               ))}
             </div>
-            <Button 
-              onClick={onBookSession}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6 font-semibold tracking-wide"
-            >
-              Book a Session
-            </Button>
+
+            <div className="flex items-center gap-3">
+              {/* Login Entry Point Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" className="rounded-full px-5 font-semibold tracking-wide gap-2 border-primary/30 text-primary hover:bg-primary/5">
+                    <LogIn className="w-4 h-4" />
+                    <span>Login</span>
+                    <ChevronDown className="w-3.5 h-3.5 opacity-70" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48 p-2 space-y-1">
+                  <DropdownMenuItem 
+                    onClick={() => setLocation('/login/student')}
+                    className="cursor-pointer gap-2.5 py-2 text-sm font-medium"
+                  >
+                    <GraduationCap className="w-4 h-4 text-blue-500" />
+                    <span>Student Login</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem 
+                    onClick={() => setLocation('/login/mentor')}
+                    className="cursor-pointer gap-2.5 py-2 text-sm font-medium"
+                  >
+                    <UserCheck className="w-4 h-4 text-emerald-500" />
+                    <span>Mentor Login</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              <Button 
+                onClick={onBookSession}
+                className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6 font-semibold tracking-wide"
+              >
+                Book a Session
+              </Button>
+            </div>
           </nav>
 
           {/* Mobile Toggle */}
@@ -90,17 +126,43 @@ export function Navbar({ onBookSession }: NavbarProps) {
               </a>
             </Link>
           ))}
-          <Button 
-            onClick={() => {
-              onBookSession();
-              closeMobileMenu();
-            }}
-            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full w-full mt-4 font-semibold"
-          >
-            Book a Session
-          </Button>
+
+          <div className="pt-4 border-t border-border flex flex-col gap-3">
+            <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Portal Login</span>
+            <Button
+              variant="outline"
+              onClick={() => {
+                closeMobileMenu();
+                setLocation('/login/student');
+              }}
+              className="w-full justify-start gap-3"
+            >
+              <GraduationCap className="w-4 h-4 text-blue-500" /> Student Login
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => {
+                closeMobileMenu();
+                setLocation('/login/mentor');
+              }}
+              className="w-full justify-start gap-3"
+            >
+              <UserCheck className="w-4 h-4 text-emerald-500" /> Mentor Login
+            </Button>
+
+            <Button 
+              onClick={() => {
+                onBookSession();
+                closeMobileMenu();
+              }}
+              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full w-full mt-2 font-semibold"
+            >
+              Book a Session
+            </Button>
+          </div>
         </div>
       </motion.div>
     </header>
   );
 }
+

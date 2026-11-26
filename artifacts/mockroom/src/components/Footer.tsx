@@ -70,7 +70,7 @@ export function Footer() {
                 href="https://www.linkedin.com/company/the-mock-room/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-card border border-border hover:border-primary hover:text-primary text-white transition-all duration-300"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-card border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
@@ -80,7 +80,7 @@ export function Footer() {
 
         <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/40">
-            &copy; 2025 The Mock Room | Rolecraft Solutions LLP. All rights reserved.
+            &copy; 2026 The Mock Room | Rolecraft Solutions LLP. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a href="#" className="text-xs text-white/40 hover:text-primary transition-colors">Privacy Policy</a>

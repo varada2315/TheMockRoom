@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, Variants } from 'framer-motion';
-import { ArrowDown, Users, Briefcase, Clock, TrendingUp, CheckCircle2, Shield, Target, Zap, ArrowRight, Quote, Star } from 'lucide-react';
+import { ArrowDown, Users, Briefcase, Clock, TrendingUp, CheckCircle2, Shield, Target, Zap, ArrowRight, Quote, Star, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
@@ -152,129 +152,135 @@ export function Home({ onBookSession }: HomeProps) {
           </div>
         </section>
 
-        {/* INDUSTRY SPECIALIZATION */}
-        <section className="py-24 md:py-40 bg-card/10 relative overflow-hidden">
+        {/* OFFICIAL COURSES */}
+        <section id="courses" className="py-24 md:py-36 bg-card/20 relative overflow-hidden">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col lg:flex-row items-center justify-between mb-20 gap-12">
+            <div className="flex flex-col lg:flex-row items-center justify-between mb-16 gap-8">
               <div className="max-w-2xl">
-                <h2 className="font-display text-4xl md:text-6xl text-foreground uppercase tracking-tight mb-6">
-                  Guidance Tailored to <span className="text-primary italic">Your Path.</span>
+                <span className="text-xs font-bold uppercase tracking-[0.25em] text-primary block mb-2">Featured Masterclasses</span>
+                <h2 className="font-serif text-4xl md:text-6xl text-foreground font-bold tracking-tight mb-4">
+                  Our Career Masterclasses
                 </h2>
-                <p className="text-xl text-muted-foreground font-light leading-relaxed">
-                  Career guidance isn't one-size-fits-all. We provide specialized high-fidelity simulations across the most competitive industries.
+                <p className="text-lg text-muted-foreground font-light leading-relaxed">
+                  Industry-leading certification tracks designed for career acceleration. All courses priced at <strong className="text-emerald-600 font-bold">₹9,499</strong> each.
                 </p>
               </div>
               <Button 
                 size="lg"
                 onClick={() => onBookSession()}
-                className="h-16 px-10 bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 rounded-full text-lg font-bold tracking-widest uppercase"
+                className="h-14 px-8 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-sm font-bold tracking-wider uppercase shadow-lg"
               >
-                Get a Free Career Audit
+                Enroll via WhatsApp
               </Button>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { title: "Tech & Product", desc: "System design, algorithmic logic, and product thinking for FAANG+ roles.", icon: <Zap className="w-6 h-6" />, image: "/domains/tech.png" },
-                { title: "Finance & IB", desc: "Market analysis, technical valuation, and high-pressure behavioral rounds.", icon: <TrendingUp className="w-6 h-6" />, image: "/domains/finance.png" },
-                { title: "Consulting", desc: "Case study mastery, structural problem solving, and executive presence.", icon: <Target className="w-6 h-6" />, image: "/domains/consulting.png" },
-                { title: "Management", desc: "Situational leadership, stakeholder management, and conflict resolution.", icon: <Shield className="w-6 h-6" />, image: "/domains/management.png" }
-              ].map((industry, i) => (
+                { id: "AI - ARTIFICIAL INTELLIGENCE", title: "AI - Artificial Intelligence", desc: "Generative AI, neural networks, PyTorch, LLMs, and real-world AI deployment.", icon: <Zap className="w-5 h-5 text-amber-500" />, image: "/domains/ai.png" },
+                { id: "IOT", title: "IoT - Internet of Things", desc: "Embedded microcontrollers, sensor nodes, MQTT protocols, and hardware systems.", icon: <TrendingUp className="w-5 h-5 text-blue-500" />, image: "/domains/iot.png" },
+                { id: "WEB DEVELOPMENT", title: "Web Development", desc: "Full stack React.js, Node.js, Express, databases, REST APIs, and hosting.", icon: <Target className="w-5 h-5 text-indigo-500" />, image: "/domains/tech.png" },
+                { id: "DIGITAL MARKETING", title: "Digital Marketing", desc: "SEO algorithms, performance advertising, growth hacking, and web analytics.", icon: <Shield className="w-5 h-5 text-emerald-500" />, image: "/domains/finance.png" },
+                { id: "VLSI", title: "VLSI Design", desc: "Verilog hardware description, ASIC/FPGA flow, digital circuits, and silicon layout.", icon: <Zap className="w-5 h-5 text-purple-500" />, image: "/domains/vlsi.png" },
+                { id: "DATA SCIENCE", title: "Data Science", desc: "Python data stack, probability, predictive modeling, and data storytelling.", icon: <TrendingUp className="w-5 h-5 text-cyan-500" />, image: "/domains/consulting.png" },
+                { id: "DATA ANALYTICS", title: "Data Analytics", desc: "SQL querying, PowerBI dashboards, business intelligence, and Excel mastery.", icon: <Target className="w-5 h-5 text-rose-500" />, image: "/domains/management.png" },
+                { id: "MACHINE LEARNING", title: "Machine Learning", desc: "Supervised algorithms, Scikit-Learn pipelines, feature selection, and API models.", icon: <Shield className="w-5 h-5 text-amber-500" />, image: "/domains/ai.png" }
+              ].map((course, i) => (
                 <motion.div 
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="bg-card border border-border/50 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-500 group cursor-default"
+                  transition={{ delay: i * 0.05 }}
+                  className="bg-card border border-border/70 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group"
                 >
                   <div className="aspect-[16/10] overflow-hidden relative">
                     <img 
-                      src={industry.image} 
-                      alt={industry.title} 
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      src={course.image} 
+                      alt={course.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60"></div>
-                    <div className="absolute bottom-4 left-4 w-12 h-12 bg-background/80 backdrop-blur-md rounded-xl flex items-center justify-center border border-border/50">
-                      {industry.icon}
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-70"></div>
+                    <div className="absolute top-3 right-3 px-3 py-1 bg-emerald-600 text-white font-bold text-xs rounded-full shadow-md">
+                      ₹9,499
                     </div>
                   </div>
-                  <div className="p-8">
-                    <h3 className="font-display text-xl uppercase tracking-widest text-white mb-4 font-bold">{industry.title}</h3>
-                    <p className="text-white/70 leading-relaxed text-sm font-light">{industry.desc}</p>
+                  <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                      <h3 className="font-serif text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{course.title}</h3>
+                      <p className="text-muted-foreground text-xs font-light leading-relaxed">{course.desc}</p>
+                    </div>
+                    <Button
+                      size="sm"
+                      onClick={() => onBookSession(course.title)}
+                      className="w-full rounded-xl bg-primary/10 hover:bg-primary text-primary hover:text-primary-foreground font-semibold text-xs transition-colors"
+                    >
+                      Enroll Now — ₹9,499
+                    </Button>
                   </div>
                 </motion.div>
               ))}
-            </div>
-
-            {/* Additional Domains with Toggle */}
-            <motion.div 
-              initial={false}
-              animate={{ height: showAllDomains ? "auto" : 0, opacity: showAllDomains ? 1 : 0 }}
-              className="overflow-hidden mt-8"
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
-                {[
-                  { title: "Marketing & Sales", desc: "Brand strategy, growth hacking, and persuasive communication for modern markets.", icon: <TrendingUp className="w-5 h-5" /> },
-                  { title: "Operations & Supply Chain", desc: "Process optimization, logistics strategy, and efficiency-driven leadership.", icon: <Zap className="w-5 h-5" /> },
-                  { title: "Data Science & AI", desc: "Predictive modeling, data storytelling, and technical interview mastery.", icon: <Target className="w-5 h-5" /> },
-                  { title: "HR & Talent", desc: "Strategic hiring, organizational culture, and employee experience design.", icon: <Users className="w-5 h-5" /> },
-                  { title: "Healthcare Admin", desc: "Operational excellence in clinical settings and healthcare leadership.", icon: <Shield className="w-5 h-5" /> },
-                  { title: "Legal & Compliance", desc: "Risk assessment, regulatory navigation, and corporate law simulations.", icon: <Target className="w-5 h-5" /> }
-                ].map((domain, i) => (
-                  <div key={i} className="p-6 bg-card/50 border border-border/30 rounded-xl hover:border-primary/30 transition-colors group">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-10 h-10 bg-primary/5 rounded-lg flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                        {domain.icon}
-                      </div>
-                      <h4 className="font-display text-sm uppercase tracking-widest text-foreground font-bold">{domain.title}</h4>
-                    </div>
-                    <p className="text-muted-foreground text-xs font-light leading-relaxed">{domain.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            <div className="mt-12 text-center">
-              <Button 
-                variant="ghost" 
-                onClick={() => setShowAllDomains(!showAllDomains)}
-                className="text-primary hover:bg-primary/10 group font-display tracking-widest uppercase"
-              >
-                {showAllDomains ? "Show Less" : "and many more domains"}
-                <ArrowDown className={`ml-2 w-4 h-4 transition-transform duration-300 ${showAllDomains ? 'rotate-180' : ''}`} />
-              </Button>
             </div>
           </div>
         </section>
 
         {/* THE PROCESS */}
-        <section className="py-24 md:py-40 relative bg-muted/30">
+        <section className="py-24 md:py-40 relative bg-muted/30 overflow-hidden">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center mb-24">
-              <h2 className="font-display text-4xl md:text-6xl text-foreground uppercase tracking-tight mb-6">The 5-Step Evolution</h2>
-              <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto italic">From academic theory to corporate dominance.</p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
-              {/* Connector line for desktop */}
-              <div className="hidden md:block absolute top-1/4 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent z-0"></div>
-              
-              {[
-                { step: "01", title: "Targeting", desc: "Select your dream role and company—like 'Product Engineer at Google' or 'Consultant at BCG'." },
-                { step: "02", title: "AI Diagnostic", desc: "5-level adaptive assessment (Easy to Tough) based on your specific company's bar." },
-                { step: "03", title: "Gap Report", desc: "Instant AI generation of your technical and behavioral performance metrics." },
-                { step: "04", title: "Human Mentor", desc: "Your report is sent to an industry expert who will lead your live sessions." },
-                { step: "05", title: "Evolution", desc: "Intensive training with your mentor to bridge the gaps and secure the offer." }
-              ].map((item, idx) => (
-                <div key={idx} className="relative z-10 flex flex-col items-center text-center group">
-                  <div className="w-16 h-16 rounded-full bg-background border-2 border-primary flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(212,168,67,0.2)] group-hover:scale-110 transition-all duration-500">
-                    <span className="font-display text-xl text-primary">{item.step}</span>
-                  </div>
-                  <h3 className="font-display text-sm uppercase tracking-widest text-white mb-4 font-bold">{item.title}</h3>
-                  <p className="text-white/70 leading-relaxed font-light text-xs">{item.desc}</p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeIn}
+                className="max-w-xl"
+              >
+                <h2 className="font-display text-4xl md:text-6xl text-foreground uppercase tracking-tight mb-6">
+                  AI Analysis Coming Soon
+                </h2>
+                <p className="text-lg md:text-xl text-muted-foreground font-light mb-8 leading-relaxed">
+                  Our proprietary AI diagnostics platform is in final training. Soon, you'll be able to simulate technical boardrooms and receive instant, objective analysis of your behavioral patterns, communication structures, and knowledge gaps.
+                </p>
+                <div className="space-y-4">
+                  {[
+                    "Micro-expression & body language assessment",
+                    "Vocabulary & logical structuring review",
+                    "Adaptive complexity adjustment based on response quality"
+                  ].map((bullet, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                      <span className="text-sm text-foreground/80 font-light">{bullet}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative h-[400px] w-full flex items-center justify-center group"
+              >
+                {/* Stacked Image 1 (Left tilted) */}
+                <div className="absolute w-[240px] md:w-[280px] aspect-[16/10] rounded-2xl overflow-hidden shadow-xl border border-border/30 -rotate-6 -translate-x-12 md:-translate-x-16 opacity-40 group-hover:-rotate-12 group-hover:-translate-x-20 transition-all duration-500 select-none">
+                  <img src="/domains/consulting.png" className="w-full h-full object-cover" alt="" />
+                </div>
+
+                {/* Stacked Image 2 (Right tilted) */}
+                <div className="absolute w-[240px] md:w-[280px] aspect-[16/10] rounded-2xl overflow-hidden shadow-xl border border-border/30 rotate-6 translate-x-12 md:translate-x-16 opacity-40 group-hover:rotate-12 group-hover:translate-x-20 transition-all duration-500 select-none">
+                  <img src="/domains/tech.png" className="w-full h-full object-cover" alt="" />
+                </div>
+
+                {/* Center Image (Top) */}
+                <div className="absolute w-[280px] md:w-[320px] aspect-square rounded-2xl overflow-hidden shadow-2xl border border-primary/50 z-10 group-hover:scale-105 transition-transform duration-500 bg-card select-none">
+                  <img src="/stock/ai-viz.png" className="w-full h-full object-cover" alt="AI Analysis Diagnostics Preview" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <p className="font-display text-xs uppercase tracking-widest text-primary font-bold mb-1">Diagnostic System</p>
+                    <h4 className="text-sm font-medium text-white">Interactive Gap Reports</h4>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -429,6 +435,149 @@ export function Home({ onBookSession }: HomeProps) {
                   Success Rate
                 </span>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SPECIALIZED COURSES */}
+        <section className="py-24 md:py-32 bg-[#050508] relative border-y border-border">
+          <div className="container mx-auto px-4 md:px-6">
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeIn}
+              className="text-center max-w-3xl mx-auto mb-20"
+            >
+              <h2 className="font-display text-5xl md:text-6xl text-white uppercase tracking-tight mb-6">
+                Our Specialized Courses
+              </h2>
+              <p className="text-lg text-white/70 font-light">
+                Redefine your potential. Accelerate your career with our masterclasses.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+              {[
+                {
+                  id: "AI - ARTIFICIAL INTELLIGENCE",
+                  title: "AI - Artificial Intelligence",
+                  subtitle: "Neural Nets & Generative AI",
+                  price: "9,499",
+                  unit: "one-time enrollment",
+                  popular: true,
+                  features: ["Generative AI & LLMs", "Deep Learning Frameworks", "Neural Networks & NLP", "Industry Capstone Project", "1-on-1 Mentorship & Reviews"]
+                },
+                {
+                  id: "IOT",
+                  title: "IOT - Internet of Things",
+                  subtitle: "Smart Devices & Sensors",
+                  price: "9,499",
+                  unit: "one-time enrollment",
+                  features: ["Embedded Systems & MCUs", "Sensor Integration", "IoT Protocols (MQTT/HTTP)", "Cloud Platform Sync", "Real-World Deployments"]
+                },
+                {
+                  id: "WEB DEVELOPMENT",
+                  title: "Web Development",
+                  subtitle: "Full Stack Mastery",
+                  price: "9,499",
+                  unit: "one-time enrollment",
+                  features: ["React.js Modern Frontend", "Node.js & Express Backend", "SQL & NoSQL Databases", "RESTful APIs & Auth", "Deployment & Hosting"]
+                },
+                {
+                  id: "DIGITAL MARKETING",
+                  title: "Digital Marketing",
+                  subtitle: "Growth & Brand Strategy",
+                  price: "9,499",
+                  unit: "one-time enrollment",
+                  features: ["SEO Optimization", "PPC & Performance Ads", "Social Media Strategy", "Web Analytics & ROI", "Conversion Optimization"]
+                },
+                {
+                  id: "VLSI",
+                  title: "VLSI Design",
+                  subtitle: "Silicon & Circuit Engineering",
+                  price: "9,499",
+                  unit: "one-time enrollment",
+                  features: ["Verilog / VHDL Coding", "ASIC / FPGA Flow", "Digital Design Basics", "Synthesis & Static Timing", "CMOS Circuits & Layout"]
+                },
+                {
+                  id: "DATA SCIENCE",
+                  title: "Data Science",
+                  subtitle: "Statistical Modeling & Analytics",
+                  price: "9,499",
+                  unit: "one-time enrollment",
+                  features: ["Python Data Ecosystem", "Probability & Statistics", "Predictive Modeling", "Feature Engineering", "Data Storytelling & Viz"]
+                },
+                {
+                  id: "DATA ANALYTICS",
+                  title: "Data Analytics",
+                  subtitle: "Business Intelligence",
+                  price: "9,499",
+                  unit: "one-time enrollment",
+                  features: ["SQL Querying & DBs", "Tableau & PowerBI Reports", "Advanced Excel Analytics", "KPI Dashboard Design", "Data-Driven Decisions"]
+                },
+                {
+                  id: "MACHINE LEARNING",
+                  title: "Machine Learning",
+                  subtitle: "Algorithms & Pipelines",
+                  price: "9,499",
+                  unit: "one-time enrollment",
+                  premium: true,
+                  features: ["Supervised & Unsupervised", "Scikit-Learn Pipelines", "Feature Selection & Tuning", "Model Deployment (APIs)", "Deep Learning Basics"]
+                }
+              ].map((tier, idx) => (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className={`relative bg-card p-6 border ${tier.popular ? 'border-primary shadow-[0_0_40px_rgba(212,168,67,0.1)]' : tier.premium ? 'border-secondary shadow-[0_0_40px_rgba(31,107,255,0.05)]' : 'border-border'} flex flex-col transition-all duration-300 hover:-translate-y-2`}
+                >
+                  {tier.popular && (
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-[10px] font-bold tracking-[0.2em] uppercase rounded-full">
+                      Most Popular
+                    </div>
+                  )}
+                  {tier.premium && (
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-secondary text-white text-[10px] font-bold tracking-[0.2em] uppercase rounded-full">
+                      Advanced Track
+                    </div>
+                  )}
+                  
+                  <div className="mb-6 border-b border-border pb-6 text-center">
+                    <h3 className="font-display text-lg uppercase tracking-wider text-foreground mb-2 min-h-[56px] flex items-center justify-center">{tier.title}</h3>
+                    <p className="text-muted-foreground text-xs mb-4">{tier.subtitle}</p>
+                    <div className="flex items-baseline justify-center gap-1">
+                      <span className="text-xl text-primary font-medium">₹</span>
+                      <span className="font-serif text-4xl text-foreground leading-none">{tier.price}</span>
+                    </div>
+                    <span className="text-muted-foreground text-xs block mt-2">{tier.unit}</span>
+                  </div>
+                  
+                  <ul className="space-y-3 mb-8 flex-grow">
+                    {tier.features.map((feat, fidx) => (
+                      <li key={fidx} className="flex items-center gap-2 text-muted-foreground font-light text-xs">
+                        <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                        {feat}
+                      </li>
+                    ))}
+                    <li className="flex items-start gap-2 text-muted-foreground text-[10px]">
+                      <MapPin className="w-4 h-4 text-primary shrink-0" />
+                      <span>Agartala, Tripura, India</span>
+                    </li>
+                  </ul>
+                  
+                  <Button 
+                    onClick={() => onBookSession(tier.id)}
+                    className={`w-full h-12 rounded-none text-sm font-display uppercase tracking-widest ${
+                      tier.popular ? 'bg-primary text-primary-foreground hover:bg-primary/90' : 'bg-transparent border border-primary text-primary hover:bg-primary/10'
+                    }`}
+                  >
+                    Enroll Now
+                  </Button>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
